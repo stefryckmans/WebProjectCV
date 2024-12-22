@@ -10,7 +10,7 @@ body {
     margin: 0 auto;
     position: relative;
     overflow-x: hidden;
-    min-width: 380px;
+    min-width: 450px;
 }
 
 header, nav, main, footer {
