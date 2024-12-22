@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link rel="stylesheet" href="Contact.css">
+</head>
+<body>
+<header>
+    <h1>Contact Form</h1>
+</header>
+    <main>
+        <form method="post" action="mailto:ryckmansstef@gmail.com?subject=onderwerp van de mail" enctype="text/plain">
+            <Label for="FirstName">Firstname <span>*</span></label>
+            <input type="text"
+                   id="FirstName"
+                   name="Voornaam "
+                   placeholder="Voornaam"
+                   required>
+            <Label for="LastName">
+                LastName <span>*</span>
+            </Label>
+            <input type="text"
+                   id="LastName"
+                   name="LastName "
+                   placeholder="LastName"
+                   required>
+            <label for="email">Email <span>*</span></label>
+            <input type="email"
+                   id="email"
+                   name="Email "
+                   title="Geef hier je email in"
+                   placeholder="Geef hier je email in"
+                   required>
+            <label for="country">Land: </label>
+            <select name="Land" id="country">
+                <option value="BE" selected>Belgie</option>
+                <option value="NL">Nederland</option>
+                <option value="LU">Luxembourg</option>
+            </select>
+
+            <label for="remarks">Opmerkingen</label>
+            <textarea id="remarks"
+                      rows="4"
+                      name="Opmerkingen"
+                      wrap="hard">
+Geef hier je opmerkingen
+  </textarea>
+            <input type="submit" value="Verzenden">
+            <input type="reset" value="Alles wissen">
+        </form>
+    </main>
+</body>
+</html>

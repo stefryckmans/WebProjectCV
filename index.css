@@ -1,0 +1,569 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    overflow-x: hidden;
+    min-width: 380px;
+}
+
+header, nav, main, footer {
+    opacity: 0;
+    animation: grow 5s ease-in-out forwards;
+    animation-delay: 7s;
+}
+
+div, header, nav, main {
+    width: 75%;
+    margin: 0 auto;
+}
+
+@keyframes grow {
+    0% { transform: scale(0); opacity: 0 }
+    100% { transform: scale(1.0); opacity: 1 }
+}
+
+.loading-screen {
+    position: fixed;
+    z-index: 5;
+    opacity: 0;
+    top: 40%;
+    left: 50%;
+    animation: fadeIn 5s ease-in forwards;
+    animation-delay: 2s;
+}
+
+.loading-screen h1 {
+    color: white;
+    font-size: 50px;
+    transform: translateX(-50%);
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.ok {
+    height: 5px;
+    display: flex;
+    background-color: white;
+    width: 100%;
+    transform: translateX(-50%);
+}
+
+.ok div {
+    background-color: red;
+    margin: 0;
+    width: 0;
+    animation: loading 4s ease-in-out forwards;
+    animation-delay: 2s;
+}
+
+@keyframes loading {
+    0% { width: 0; }
+    100% { width: 100%; }
+}
+
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("Assets/796169491973.jpg");
+    animation: hueChange 15s infinite;
+}
+
+@keyframes hueChange {
+    0% { filter: hue-rotate(0deg); }
+    25% { filter: hue-rotate(90deg); }
+    50% { filter: hue-rotate(180deg); }
+    75% { filter: hue-rotate(270deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+header {
+    position: relative;
+    color: white;
+    text-align: center;
+    margin-top: 50px;
+    padding: 40px;
+    background: rgba(24, 24, 27, 0.4);
+}
+
+header hr {
+    width: 50%;
+    transform: translateX(50%);
+    margin: 10px;
+}
+
+header h1 {
+    font-size: 3rem;
+    font-family: 'Georgia', serif;
+}
+
+.AboutMe-container img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: box-shadow 1.5s;
+    filter: brightness(80%);
+}
+
+.AboutMe-container img:hover {
+    box-shadow: 0 0 25px red;
+    scale: 105%;
+}
+
+.AboutMe-container img:active {
+    border: 2px solid white;
+    box-shadow: none;
+}
+
+nav {
+    background-color: rgba(24, 24, 27, 1); /* Dark navy color */
+    padding: 10px 0;
+    position: sticky;
+    top: -1px;
+    text-align: center;
+    z-index: 3;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 15px 10px;
+    flex: 1;
+    transition: scale 0.5s;
+}
+
+nav i {
+    margin-right: 10px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+nav li:hover {
+    background-color: red;
+    scale: 95%;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+    position: relative;
+    z-index: 1;
+}
+
+.first-container {
+    width: 60%;
+    background-color: rgba(24, 24, 27, 0.4);
+}
+
+.AboutMe-container {
+    display: flex;
+    align-items: center;
+    background-color: rgba(24, 24, 27, 1);
+    color: white;
+    padding: 40px;
+    margin: 40px;
+    border-radius: 10px;
+}
+
+.AboutMe-container h2, hr, p {
+    margin: 10px 10px;
+}
+
+.AboutMe-container p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: white;
+    max-width: 600px;
+}
+
+.TechnicalSkills-table, .SoftSkills-table {
+    margin: 50px auto;
+    border-collapse: collapse;
+    width: 80%;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.Mobileversion-technischcontainer {
+    display: none;
+    width: 80%;
+    margin: 5% auto;
+    animation: hueChange 15s infinite;
+}
+
+.Mobileversion-technischcontainer h2 {
+    color: white;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    color: red;
+    font-weight: bold;
+    margin: 3% 0;
+}
+
+.colorBar-container1, .colorBar-container2,
+.colorBar-container3, .colorBar-container4 {
+    display: flex;
+    width: 100%;
+    height: 10px;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.colorBar-container1 div {
+    background-color: red;
+    width: 20%;
+    border-radius: 5px;
+}
+
+.colorBar-container2 div {
+    background-color: red;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.colorBar-container3 div {
+    background-color: red;
+    width: 30%;
+    border-radius: 5px;
+}
+
+.colorBar-container4 div {
+    background-color: red;
+    width: 20%;
+    border-radius: 5px;
+}
+
+.Mobileversion-softcontainer {
+    display: none;
+    flex-direction: column;
+    width: 80%;
+    height: auto;
+    margin: 5% auto;
+    color: white;
+    animation: hueChange 15s infinite;
+}
+
+.Mobileversion-softcontainer div {
+    margin: 2% auto;
+}
+
+.Mobileversion-softcontainer h2 {
+    text-align: right;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.skill {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid red;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.flex-item1 {
+    width: 30%;
+    text-align: left;
+    padding: 0 20px;
+    margin: 0 5px;
+}
+
+.flex-item2 {
+    width: 60%;
+    text-align: right;
+    padding: 0 10px;
+    margin: 0 5px;
+}
+
+.TechnicalSkills-table th, td, caption,
+.SoftSkills-table th, td, caption {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    text-align: center;
+}
+
+.TechnicalSkills-table caption, .SoftSkills-table caption {
+    animation: hueChange 15s infinite;
+    filter: hue-rotate(0deg);
+}
+
+.TechnicalSkills-table th,
+.SoftSkills-table th {
+    background-color: rgba(24, 24, 27, 1);
+    color: #fff;
+    font-size: 1.2rem;
+}
+
+.TechnicalSkills-table caption,
+.SoftSkills-table caption {
+    background-color: #dc2626;
+    color: white;
+    width: 50%;
+    transform: translateX(50%);
+}
+
+.TechnicalSkills-table tbody tr:nth-child(even),
+.SoftSkills-table tbody tr:nth-child(even) {
+    background-color: #52525b;
+    color: white;
+}
+
+.TechnicalSkills-table tbody tr:nth-child(odd),
+.SoftSkills-table tbody tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.flex-container2 {
+    width: 40%;
+    background-color: rgba(24, 24, 27, 0.4);
+}
+
+.WorkExperience-container {
+    align-items: center;
+    background-color: rgba(24, 24, 27, 1);
+    color: white;
+    padding: 40px;
+    margin: 40px;
+    border-radius: 10px;
+}
+
+.WorkExperience-container h2, hr, p {
+    margin: 10px 10px;
+}
+
+.EsteeLauder-container, .Toyota-container {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    padding: 26px;
+}
+
+.EsteeLauder-container li,
+.Toyota-container li {
+    color: white;
+}
+
+.JobDescription-item {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.BehaaldeDiplomas-container, .Talenkennis-container {
+    align-items: center;
+    background-color: rgba(24, 24, 27, 1);
+    color: white;
+    padding: 40px;
+    margin: 40px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.BehaaldeDiplomas-container + .Talenkennis-container h2,
+hr, p {
+    margin: 10px 0;
+}
+
+.BehaaldeDiplomas-container li, .Talenkennis-container li {
+    list-style-position: inside;
+}
+
+footer {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    flex: 1;
+    font-size: 1rem;
+    height: 100px;
+    background: rgba(24, 24, 27, 0.4);
+    color: white;
+    align-items: center;
+}
+
+footer a p, p {
+    padding: 1.2rem;
+}
+
+footer a p {
+    transition: scale 0.5s;
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+a p:hover {
+    background-color: red;
+    scale: 95%;
+}
+
+
+@media (max-width: 1200px) {
+    body {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    header h1 {
+        font-size: 2.5rem;
+    }
+
+    .first-container, .flex-container2 {
+        width: 100%;
+    }
+
+    .AboutMe-container, .WorkExperience-container, .BehaaldeDiplomas-container, .Talenkennis-container {
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .AboutMe-container img {
+        width: 150px;
+        height: 150px;
+    }
+
+    .TechnicalSkills-table, .SoftSkills-table {
+        width: 100%;
+    }
+
+    .TechnicalSkills-table th,
+    .SoftSkills-table th {
+        font-size: 1rem;
+    }
+
+    .TechnicalSkills-table caption,
+    .SoftSkills-table caption {
+        width: 70%;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    nav a {
+        font-size: 1rem;
+    }
+
+    .AboutMe-container img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .TechnicalSkills-table th,
+    .SoftSkills-table th {
+        font-size: 0.9rem;
+    }
+
+    .TechnicalSkills-table caption,
+    .SoftSkills-table caption {
+        font-size: 1rem;
+    }
+
+    .WorkExperience-container h2, .BehaaldeDiplomas-container h2, .Talenkennis-container h2 {
+        font-size: 1.2rem;
+    }
+
+    footer {
+        font-size: 0.7rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    .AboutMe-container img {
+        width: 100px;
+        height: 100px;
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .TechnicalSkills-table th,
+    .SoftSkills-table th {
+    }
+
+    .TechnicalSkills-table caption,
+    .SoftSkills-table caption {
+        font-size: 0.9rem;
+    }
+
+    .AboutMe-container, .WorkExperience-container, .BehaaldeDiplomas-container, .Talenkennis-container {
+        padding: 15px;
+        margin: 10px;
+    }
+
+    .TechnicalSkills-table, .SoftSkills-table {
+        display: none;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    .Mobileversion-softcontainer, .Mobileversion-technischcontainer {
+        display: block;
+    }
+
+    .Mobileversion-softcontainer p {
+        font-size: 0.5rem;
+    }
+
+    footer {
+        font-size: 0.4rem;
+    }
+}
+
+
